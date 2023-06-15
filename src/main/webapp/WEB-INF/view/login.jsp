@@ -17,7 +17,7 @@
 <c:if test="${param.logout!=null}"> 
 <p>you have logout</p>
 </c:if>
-<form:form action="${pageContext.request.contextPath}/loginUser" method="post" modelAttribute="user">
+<form action="${pageContext.request.contextPath}/loginUser" method="post" modelAttribute="user">
   <p>
   Name: <input type="text"  name="username"/>
   </p>
@@ -26,8 +26,8 @@
   </p>
   
         <input type="submit" value="Login">
-
-</form:form>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+</form>
 
 
 </body>
