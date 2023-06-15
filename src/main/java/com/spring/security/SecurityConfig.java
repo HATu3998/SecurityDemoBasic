@@ -21,7 +21,8 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 		.formLogin()
 		.loginPage("/login").loginProcessingUrl("/loginUser")
       //  .defaultSuccessUrl("/")
-        .permitAll();
+        .permitAll().and()
+        .logout().permitAll();
 	}
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
